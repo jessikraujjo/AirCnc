@@ -3,16 +3,16 @@ import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import DashBoard from './pages/DashBoard';
 import New from './pages/New';
 
 export default function Routes(){
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact compponent={Login} />
-                <Route path="/dashboard" compponent={Dashboard} />
-                <Route path="/new" compponent={New} />
+                <Route path="/" exact component={Login} />
+                <Route path="/dashboard" component={DashBoard} />
+                <Route path="/new" component={New} />
             </Switch>
         </BrowserRouter>
     );

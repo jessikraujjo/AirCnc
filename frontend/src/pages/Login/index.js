@@ -1,6 +1,19 @@
-import React from 'react';
+import  React,{ useState } from 'react';
+import api from '../../services/api';
 
-export default function Login(){
+export default function Login({ history }){
+  //setEmail vai att o valor de email
+  const [email, setEmail] = useState('');
+
+  async function handleSubmit(event){
+    event.preventDefault();//impede de enviar pra outra tela
+    const response = await api.post('/sessions', { email });
+    
+    const { _id } = response.data;
+    localStorage.setItem('user', _id);
+    
+    history.push('/dashboard');
+  }
     return (
        <> 
        <p>
